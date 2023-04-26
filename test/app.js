@@ -1,3 +1,4 @@
+console.log("hi");
 let tg = Telegram.WebApp;
 
         
