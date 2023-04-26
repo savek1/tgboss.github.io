@@ -11,6 +11,7 @@ document.addEventListener("change", function(){
 
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
+        alert("PRESSED");
     let data = "";
     let checked = document.querySelectorAll("input");
     for (i=0;i<checked.length;i++){
