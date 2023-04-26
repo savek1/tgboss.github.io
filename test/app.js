@@ -1,9 +1,10 @@
-let tg = window.Telegram.WebApp;
+let tg = Telegram.WebApp;
 
         
 tg.expand();
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2cab37";
+tg.MainButton.setText("Save");
 document.addEventListener("change", function(){
     tg.MainButton.setText("Save");
     tg.MainButton.show();
