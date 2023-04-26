@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="text_box.css" rel="stylesheet">
+</head>
+<body>
+    <div class="checkbox-btn-group">
+    <label class="checkbox-btn">
+        <input type="checkbox" id="Ymir1">
+        <span>Ymir1</span>
+    </label>
+
+    <label class="checkbox-btn">
+        <input type="checkbox" id="Ymir2">
+        <span>Ymir2</span>
+    </label>
+    <label class="checkbox-btn">
+        <input type="checkbox" id="Ymir3">
+        <span>Ymir3</span>
+    </label>
+</div>
+    <script>
+        const params = new URLSearchParams(location.search)
+        bosses = params.get('data').split(',')
+        console.log(bosses)
+        for (var i = 0; i < bosses.length; i++) {
+        console.log(i);
+        console.log("#"+bosses[i]);
+        document.querySelector('#'+bosses[i]).checked = true
+    }
+    </script>
+
+</body>
+
+</html>
