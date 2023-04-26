@@ -1,3 +1,11 @@
+body {
+	margin: 0; 
+	padding: 0; 
+	font-size: 18px; 
+	color: var(--tg_theme-text-color);
+	background: var(--tg-theme-bg-color);
+}
+
 .checkbox-btn {
 	display: inline-block;
 	margin: 0 5px 0 0;
