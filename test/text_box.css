@@ -70,28 +70,4 @@ body {
 .checkbox-btn input[type=checkbox]:not(:checked) + span {
 	background: #e64d44;
 } 
-/* Focus */
-.focused span {
-	box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
-}
- 
-/* Hover */
-.checkbox-btn:hover {
-	color: #666;
-}
- 
-/* Active */
-.checkbox-btn input[type=checkbox]:active:not(:disabled) + span {
-	background: #d2c5ac;
-	color: #000;
-}
- 
-/* Disabled */
-.checkbox-btn input[type=checkbox]:disabled + span {
-	background: #efefef;
-	color: #666;
-	cursor: default;
-}
-.checkbox-btn input[type=checkbox]:checked:disabled + span {
-	background: #e64d44;
-}
+/* 
