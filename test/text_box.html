@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="text_box.css" rel="stylesheet">
+    <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
+    <script scr="app.js"></script>
 </head>
 <body><section class="cafe-items">
             <label class="checkbox-btn">Ymirs/Pans</label>
@@ -93,7 +95,8 @@
             </label>
         </div>
 </section>
-<script scr="https://telegram.org/js/telegram-web-app.js"></script>
+
+
     <script>
         const params = new URLSearchParams(location.search)
         bosses = params.get('data').split(',')
@@ -104,7 +107,6 @@
         document.querySelector('#'+bosses[i]).checked = true
     }
     </script>
-<script scr="app.js"></script>
 </body>
 
 </html>
