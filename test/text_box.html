@@ -6,22 +6,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="text_box.css" rel="stylesheet">
 </head>
-<body>
-    <div class="checkbox-btn-group">
-    <label class="checkbox-btn">
-        <input type="checkbox" id="Ymir1">
-        <span>Lv1</span>
-    </label>
+<body><section class="cafe-items">
+            <label class="checkbox-btn">Ymirs/Pans</label>
+            <div class="checkbox-btn-group">
+                <label class="checkbox-btn"><input type="checkbox" id="Ymir1"><span>Lv1</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="Ymir2"><span>Lv2</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="Ymir3"><span>Lv3</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="Ymir4"><span>Lv4</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="Ymir5"><span>Lv5</span></label>
+            </div>
+        <label class="checkbox-btn">Event monsters: Turtle/Witch/Golem/</label>
+        <div class="checkbox-btn-group">
+            <label class="checkbox-btn"><input type="checkbox" id="Event1"><span>Lv1</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Event2"><span>Lv2</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Event3"><span>Lv3</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Event4"><span>Lv4</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Event5"><span>Lv5</span></label>
+        </div>
+        <label class="checkbox-btn">Hydra</label>
+        <div class="checkbox-btn-group">
+            <label class="checkbox-btn">
+                <input type="checkbox" id="Hydra1">
+                <span>Lv1</span>
+            </label>
+            <label class="checkbox-btn">
+                <input type="checkbox" id="Hydra2">
+                <span>Lv2</span>
+            </label>
+            <label class="checkbox-btn">
+                <input type="checkbox" id="Hydra3">
+                <span>Lv3</span>
+            </label>
+            <label class="checkbox-btn">
+                <input type="checkbox" id="Hydra4">
+                <span>Lv4</span>
+            </label>
+        </div>
+        <label class="checkbox-btn">Regular bosses</label>
+        <div class="checkbox-btn-group">
+            <label class="checkbox-btn">
+                <input type="checkbox" id="B13">
+                <span>B13</span>
+            </label>
+            <label class="checkbox-btn">
+                <input type="checkbox" id="B14">
+                <span>B14</span>
+            </label>
+            <label class="checkbox-btn">
+                <input type="checkbox" id="Pheonix">
+                <span>Pheonix</span>
+            </label>
+            <label class="checkbox-btn">
+                <input type="checkbox" id="B16">
+                <span>Typhon</span>
+            </label>
+            <label class="checkbox-btn">
+                <input type="checkbox" id="Typhon">
+                <span>Typhon</span>
+            </label>
+        </div>
 
-    <label class="checkbox-btn">
-        <input type="checkbox" id="Ymir2">
-        <span>Lv2</span>
-    </label>
-    <label class="checkbox-btn">
-        <input type="checkbox" id="Ymir3">
-        <span>Lv3</span>
-    </label>
-</div>
+
+
+
+        <label class="checkbox-btn">BOSS_DESK</label>
+        <div class="checkbox-btn-group">
+            <label class="checkbox-btn">
+                <input type="checkbox" id="Key1">
+                <span>Lv1</span>
+            </label>
+            <label class="checkbox-btn">
+                <input type="checkbox" id="Key2">
+                <span>Lv2</span>
+            </label>
+            <label class="checkbox-btn">
+                <input type="checkbox" id="Key3">
+                <span>Lv3</span>
+            </label>
+            <label class="checkbox-btn">
+                <input type="checkbox" id="Key4">
+                <span>Lv4</span>
+            </label>
+            <label class="checkbox-btn">
+                <input type="checkbox" id="Key5">
+                <span>Lv5</span>
+            </label>
+        </div>
+</section>
+<script scr=""https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         const params = new URLSearchParams(location.search)
         bosses = params.get('data').split(',')
@@ -31,6 +103,32 @@
         console.log("#"+bosses[i]);
         document.querySelector('#'+bosses[i]).checked = true
     }
+    </script>
+    <script>
+        let tg = window.Telegram.WebApp;
+
+        
+        tg.expand();
+        tg.MainButton.textColor = "#FFFFFF";
+        tg.MainButton.color = "#2cab37";
+        document.addEventListener("change", function(){
+            tg.MainButton.setText("Save");
+            tg.MainButton.show();
+        })
+
+
+        Telegram.WebApp.onEvent("mainButtonClicked", function(){
+            let data = "";
+            let checked = document.querySelectorAll("input");
+            for (i=0;i<checked.length;i++){
+                if (checked[i].checked){
+                    console.log(checked[i].id)
+                    data = data +","+ checked[i].id
+                }
+            }
+            tg.sendData(data);
+        })
+
     </script>
 
 </body>
