@@ -116,7 +116,7 @@ var RLottie = (function () {
       if (!apiInitStarted) {
         console.log(dT(), 'tgsticker init');
         apiInitStarted = true;
-        QueryableWorkerProxy.init('/js/tgsticker-worker.js?14', rlottie.WORKERS_LIMIT, function() {
+        QueryableWorkerProxy.init('https://tg.dev/js/tgsticker-worker.js', rlottie.WORKERS_LIMIT, function() {
           apiInited = true;
           for (var i = 0; i < initCallbacks.length; i++) {
             initCallbacks[i]();
@@ -678,6 +678,7 @@ var QueryableWorkerProxy = (function() {
 
 function QueryableWorker(url, defaultListener, onError) {
   var instance = this;
+  console.log(url)
   var worker = new Worker(url);
   var listeners = {};
 
