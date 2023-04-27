@@ -77,14 +77,11 @@ body {
  
 
 .checkbox-btn input[type=checkbox]:checked + span {
-    	color: var(--tg-theme-button-text-color);
-	border: #00ff99;
-   	border-style: solid;
+	background: #00ff99;
+    color: var(--tg-theme-button-text-color);
 }
 .checkbox-btn input[type=checkbox]:not(:checked) + span {
-	background: var(--tg-theme-button-color);
-   	color: var(--tg-theme-button-text-color);
-	border: #e64d44;
-   	border-style: solid;
+	background: #e64d44;
+    color: var(--tg-theme-button-text-color);
 
 } 
