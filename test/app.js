@@ -1,11 +1,9 @@
-console.log("hi");
 let tg = Telegram.WebApp;
 
         
 tg.expand();
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2cab37";
-tg.MainButton.setText("Save");
 document.addEventListener("change", function(){
     tg.MainButton.setText("Save");
     tg.MainButton.show();
@@ -13,7 +11,6 @@ document.addEventListener("change", function(){
 
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
-        alert("PRESSED");
     let data = "";
     let checked = document.querySelectorAll("input");
     for (i=0;i<checked.length;i++){
