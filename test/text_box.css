@@ -64,8 +64,11 @@ body {
 /* Checked */
 .checkbox-btn input[type=checkbox]:checked + span {
 	background: #00ff99;
+    color: var(--tg-theme-button-text-color);
 }
 .checkbox-btn input[type=checkbox]:not(:checked) + span {
 	background: #e64d44;
+    color: var(--tg-theme-button-text-color);
+
 } 
 /* 
