@@ -28,9 +28,21 @@ body {
     -webkit-user-select: none;
     user-select: none;
     cursor: default;
+    
+  }
+  .center1 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+  .center2{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
   }
   .cafe-items {
-    display: table;
     flex-wrap: wrap;
 	  padding: 20px;
     margin: 0 auto;
@@ -63,7 +75,7 @@ body {
 	transition: background 0.2s ease;
 }
  
-/* Checked */
+
 .checkbox-btn input[type=checkbox]:checked + span {
 	background: #00ff99;
     color: var(--tg-theme-button-text-color);
@@ -73,4 +85,3 @@ body {
     color: var(--tg-theme-button-text-color);
 
 } 
-/* 
