@@ -81,7 +81,8 @@ body {
     color: var(--tg-theme-button-text-color);
 }
 .checkbox-btn input[type=checkbox]:not(:checked) + span {
-	background: var(--tg-theme-button-color) /*#e64d44;*/
+	background: var(--tg-theme-button-color);
+	
     color: var(--tg-theme-button-text-color);
 
 } 
