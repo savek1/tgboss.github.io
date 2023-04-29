@@ -75,7 +75,9 @@ body {
 	transition: background 0.2s ease;
 }
  
-
+label.center1 {
+  padding-top: 10px;
+}
 .checkbox-btn input[type=checkbox]:checked + span {
 	background: #00ff99;
     color: var(--tg-theme-button-text-color);
