@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover">
+    <link href="text_box.css" rel="stylesheet">
+    <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
+</head>
+<body><section class="cafe-items center1">
+            <label for="search-radius" class="checkbox-btn center1">Search radius:</label> 
+            <select name="search-radius" id="search-radius" class="checkbox-btn-group center2"> 
+                <option type="checkbox" value="150km" class="checkbox-btn">150km</option> 
+                <option type="checkbox" value="250km" class="checkbox-btn">250km</option> 
+                <option type="checkbox" value="400km" class="checkbox-btn">400km</option> 
+                <option type="checkbox" value="FullMap">Full Map</option> 
+            </select>
+
+
+            <label class="checkbox-btn center1">Ymirs/Pans</label>
+            <div class="checkbox-btn-group center2">
+                <label class="checkbox-btn"><input type="checkbox" id="YmirPan1"><span>Lv1</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="YmirPan2"><span>Lv2</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="YmirPan3"><span>Lv3</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="YmirPan4"><span>Lv4</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="YmirPan5"><span>Lv5</span></label>
+            </div>
+        <label class="checkbox-btn center1">Event boss: Turtle/Witch/Golem/Warlord</label>
+        <div class="checkbox-btn-group center2">
+            <label class="checkbox-btn"><input type="checkbox" id="Event1"><span>Lv1</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Event2"><span>Lv2</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Event3"><span>Lv3</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Event4"><span>Lv4</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Event5"><span>Lv5</span></label>
+        </div>
+        <label class="checkbox-btn center1">Hydra</label>
+        <div class="checkbox-btn-group center2">
+            <label class="checkbox-btn"><input type="checkbox" id="Hydra1"><span>Lv1</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Hydra2"><span>Lv2</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Hydra3"><span>Lv3</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Hydra4"><span>Lv4</span></label>
+        </div>
+        <label class="checkbox-btn center1">Regular bosses</label>
+        <div class="checkbox-btn-group center2">
+            <label class="checkbox-btn"><input type="checkbox" id="Fafnir"><span>Fafnir b13</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Behemoth"><span>Behemoth b14</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Pheonix"><span>Pheonix b15</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Jormungandr"><span>Jormung b16</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Typhon"><span>Typhon b17</span> </label>
+        </div>
+        <label class="checkbox-btn center1">Sphinx</label>
+        <div class="checkbox-btn-group center2">
+            <label class="checkbox-btn"><input type="checkbox" id="Sphinx1"><span>Lv1</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Sphinx2"><span>Lv2</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Sphinx3"><span>Lv3</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Sphinx4"><span>Lv4</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Sphinx5"><span>Lv5</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Sphinx6"><span>Lv6</span> </label>
+        </div>
+        <label class="checkbox-btn center1">Cerberus</label>
+        <div class="checkbox-btn-group center2">
+            <label class="checkbox-btn"><input type="checkbox" id="Cerberus1"><span>Lv1</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Cerberus2"><span>Lv2</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Cerberus3"><span>Lv3</span> </label>
+        </div>
+        <label class="checkbox-btn center1">Bayard</label>
+        <div class="checkbox-btn-group center2">
+            <label class="checkbox-btn"><input type="checkbox" id="Bayard1"><span>Lv1</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Bayard2"><span>Lv2</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Bayard3"><span>Lv3</span> </label>
+        </div>
+</section>
+
+
+    <script>
+        const params = new URLSearchParams(location.search)
+        bosses = params.get('data').split('_')[0].split(',')
+        console.log(bosses)
+        for (var i = 0; i < bosses.length; i++) {
+            console.log(i);
+            console.log("#"+bosses[i]);
+            document.querySelector('#'+bosses[i]).checked = true
+        }
+        radius = params.get('data').split('_')[1]
+        document.querySelector('#search-radius').value = radius
+    </script>
+    <script src="app.js"></script>
+    
+
+</body>
+
+</html>
