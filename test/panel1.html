@@ -8,14 +8,30 @@
     <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
 </head>
 <body><section class="cafe-items center1">
-            <label for="search-radius" class="checkbox-btn center1">Search radius:</label> 
-            <select name="search-radius" id="search-radius" class="checkbox-btn-group center2"> 
-                <option type="checkbox" value="FullMap">Full Map</option> 
-                <option type="checkbox" value="150km" class="checkbox-btn">150km</option> 
-                <option type="checkbox" value="250km" class="checkbox-btn">250km</option> 
-                <option type="checkbox" value="400km" class="checkbox-btn">400km</option> 
-            </select>
 
+            <div style="display: flex;">
+                <div style="
+                padding-right: 30px;
+            ">
+                    <label for="search-radius" class="checkbox-btn center1" >Search radius:</label>
+                    <select name="search-radius" id="search-radius" class="checkbox-btn-group center2">
+                        <option type="checkbox" value="FullMap">Full Map</option>
+                        <option type="checkbox" value="150km" class="checkbox-btn">150km</option>
+                        <option type="checkbox" value="250km" class="checkbox-btn">250km</option>
+                        <option type="checkbox" value="400km" class="checkbox-btn">400km</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="share-amount" class="checkbox-btn center1">Bosses to share:</label>
+                    <select name="share-amount" id="share-amount" class="checkbox-btn-group center2">
+                        <option type="checkbox" value="6">6</option>
+                        <option type="checkbox" value="10" class="checkbox-btn">10</option>
+                        <option type="checkbox" value="15" class="checkbox-btn">15</option>
+                        <option type="checkbox" value="25" class="checkbox-btn">25</option>
+                        <option type="checkbox" value="40" class="checkbox-btn">40</option>
+                    </select>
+                </div>
+            </div>
 
             <label class="checkbox-btn center1">Ymirs/Pans</label>
             <div class="checkbox-btn-group center2">
@@ -51,7 +67,7 @@
             <label class="checkbox-btn"><input type="checkbox" id="Pheonix"><span>Pheonix b15</span> </label>
             <label class="checkbox-btn"><input type="checkbox" id="Jormungandr"><span>Jormung b16</span> </label>
             <label class="checkbox-btn"><input type="checkbox" id="Typhon"><span>Typhon b17</span> </label>
-            <label class="checkbox-btn"><input type="checkbox" id="Ammit"><span>Ammit b18</span> </label> 
+            <label class="checkbox-btn"><input type="checkbox" id="Ammit"><span>Ammit b18</span> </label>
             <label class="checkbox-btn"><input type="checkbox" id="StymphalianBird"><span>Bird b19</span> </label>
         </div>
         <label class="checkbox-btn center1">Sphinx</label>
@@ -104,10 +120,19 @@
             document.querySelector('#'+bosses[i]).checked = true
         }
         radius = params.get('data').split('_')[1]
+        share_amount = params.get('data').split('_')[2]
+        if (radius == undefined){
+            radius = "FullMap";
+        }
+        if (share_amount == undefined){
+            share_amount = 15;
+        }
+        console.log(radius)
         document.querySelector('#search-radius').value = radius
+        document.querySelector('#share-amount').value = share_amount
     </script>
     <script src="app2.js"></script>
-    
+
 
 </body>
 
