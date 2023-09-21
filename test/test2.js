@@ -4,7 +4,7 @@ tg.ready();
 tg.expand();
 tg.setHeaderColor("#2cab37");
 tg.MainButton.textColor = "#FFFFFF";
-tg.MainButton.color = "#2cab37";
+// tg.MainButton.color = "#2cab37";
 document.addEventListener("change", function(){
     tg.MainButton.setText("Save");
     tg.MainButton.show();
