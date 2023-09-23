@@ -127,7 +127,9 @@
             share_amount = 15;
         }
         console.log(radius)
-
+        if bosses.startswith(','){
+            bosses = bosses.substring(1)
+        }
         // set values 
         for (var i = 0; i < bosses.length; i++) {
             console.log(i);
