@@ -127,14 +127,15 @@
             share_amount = 15;
         }
         console.log(radius)
-        if bosses.startswith(','){
-            bosses = bosses.substring(1)
-        }
+
         // set values 
         for (var i = 0; i < bosses.length; i++) {
             console.log(i);
             console.log("#"+bosses[i]);
-            document.querySelector('#'+bosses[i]).checked = true
+            if bosses[i].length > 0{
+                document.querySelector('#'+bosses[i]).checked = true
+            }
+            
         }
         document.querySelector('#search-radius').value = radius
         document.querySelector('#share-amount').value = share_amount
