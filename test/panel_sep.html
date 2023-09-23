@@ -10,9 +10,7 @@
 <body><section class="cafe-items center1">
 
             <div style="display: flex;">
-                <div style="
-                padding-right: 30px;
-            ">
+                <div style="padding-right: 30px;">
                     <label for="search-radius" class="checkbox-btn center1" >Search radius:</label>
                     <select name="search-radius" id="search-radius" class="checkbox-btn-group center2">
                         <option type="checkbox" value="FullMap">Full Map</option>
@@ -32,6 +30,24 @@
                     </select>
                 </div>
             </div>
+            <details style="margin-top: 10px;">
+                <p>Cords will be used in text mode. To calculate distance to bosses.</p>
+                <div style="display: flex;flex-direction: column;">
+                    <div style="padding-right: 30px;display: flex;flex-direction: row;align-items: center;">
+                        <label for="search-radius" class="checkbox-btn center1" >x</label>
+                        <input name="search-radius" id="x" class="checkbox-btn-group center2">
+                            
+                        </input>
+                    </div>
+                    <div style="padding-right: 30px;display: flex;flex-direction: row;align-items: center;">
+                        <label for="share-amount" class="checkbox-btn center1">y</label>
+                        <input name="share-amount" id="y" class="checkbox-btn-group center2">
+                            
+                        </input>
+                    </div>
+                </div>
+                <summary class="checkbox-btn center1">Hive Location</summary>
+            </details>
 
             <label class="checkbox-btn center1">Ymirs/Pans</label>
             <div class="checkbox-btn-group center2">
@@ -120,6 +136,12 @@
         console.log(obj)
         bosses = obj['b'].split(',')
         radius = obj['r']
+        x = obj['x']
+        y = obj['y']
+        if (x == undefined){
+            x = 600;
+            y = 600;
+        }
         share_amount = obj['s']
         if (radius == undefined){
             radius = "FullMap";
@@ -139,6 +161,8 @@
         }
         document.querySelector('#search-radius').value = radius
         document.querySelector('#share-amount').value = share_amount
+        document.querySelector('#x').value = x
+        document.querySelector('#y').value = y
     </script>
     <script src="panel_sep.js"></script>
 
