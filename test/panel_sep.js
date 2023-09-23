@@ -22,5 +22,10 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
     }
     let radius = document.querySelector("#search-radius").value
     let share_amount = document.querySelector("#share-amount").value
-    tg.sendData(data+'_'+ radius+ '_' + share_amount);
+    let ret = {
+        "b": data,
+        "r": radius,
+        "s": share_amount
+    }
+    tg.sendData(ret);
 })

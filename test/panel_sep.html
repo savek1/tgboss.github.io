@@ -114,15 +114,11 @@
 
     <script>
         const params = new URLSearchParams(location.search)
-        bosses = params.get('data').split('_')[0].split(',')
-        console.log(bosses)
-        for (var i = 0; i < bosses.length; i++) {
-            console.log(i);
-            console.log("#"+bosses[i]);
-            document.querySelector('#'+bosses[i]).checked = true
-        }
-        radius = params.get('data').split('_')[1]
-        share_amount = params.get('data').split('_')[2]
+        data = params.get('data')
+        var obj = JSON.parse(data);
+        bosses = obj['b'].split(',')
+        radius = obj['r']
+        share_amount = obj['s']
         if (radius == undefined){
             radius = "FullMap";
         }
@@ -130,6 +126,13 @@
             share_amount = 15;
         }
         console.log(radius)
+
+        // set values 
+        for (var i = 0; i < bosses.length; i++) {
+            console.log(i);
+            console.log("#"+bosses[i]);
+            document.querySelector('#'+bosses[i]).checked = true
+        }
         document.querySelector('#search-radius').value = radius
         document.querySelector('#share-amount').value = share_amount
     </script>
