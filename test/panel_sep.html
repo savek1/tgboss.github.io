@@ -116,6 +116,7 @@
         const params = new URLSearchParams(location.search)
         data = params.get('data')
         var obj = JSON.parse(data);
+        console.log(obj)
         bosses = obj['b'].split(',')
         radius = obj['r']
         share_amount = obj['s']
