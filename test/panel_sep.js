@@ -2,7 +2,9 @@ let tg = Telegram.WebApp;
 
 tg.ready();
 tg.expand();
-// tg.setHeaderColor("#2cab37");
+try {
+    tg.setHeaderColor("#2cab37");
+} catch(err) {}
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2cab37";
 document.addEventListener("change", function(){
@@ -22,7 +24,7 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
     }
     let radius = document.querySelector("#search-radius").value
     let share_amount = document.querySelector("#share-amount").value
-    if data.startsWith(','){
+    if (data.startsWith(',')){
             data = data.substring(1)
         }
     let ret = {
