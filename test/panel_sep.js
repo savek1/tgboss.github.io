@@ -27,5 +27,5 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
         "r": radius,
         "s": share_amount
     }
-    tg.sendData(ret);
+    tg.sendData(JSON.stringify(ret));
 })
