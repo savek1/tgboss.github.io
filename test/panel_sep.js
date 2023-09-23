@@ -22,7 +22,7 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
     }
     let radius = document.querySelector("#search-radius").value
     let share_amount = document.querySelector("#share-amount").value
-    if data.startswith(','){
+    if data.startsWith(','){
             data = data.substring(1)
         }
     let ret = {
