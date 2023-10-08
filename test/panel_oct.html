@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover">
+    <link href="text_box.css" rel="stylesheet">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body><section class="cafe-items center1">
+
+            <div style="display: flex;">
+                <div style="padding-right: 30px;">
+                    <label for="search-radius" class="checkbox-btn center1" >Search radius:</label>
+                    <select name="search-radius" id="search-radius" class="checkbox-btn-group center2">
+                        <option type="checkbox" value="FullMap">Full Map</option>
+                        <option type="checkbox" value="150km" class="checkbox-btn">150km</option>
+                        <option type="checkbox" value="250km" class="checkbox-btn">250km</option>
+                        <option type="checkbox" value="400km" class="checkbox-btn">400km</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="share-amount" class="checkbox-btn center1">Bosses to share:</label>
+                    <select name="share-amount" id="share-amount" class="checkbox-btn-group center2">
+                        <option type="checkbox" value="6">6</option>
+                        <option type="checkbox" value="10" class="checkbox-btn">10</option>
+                        <option type="checkbox" value="15" class="checkbox-btn">15</option>
+                        <option type="checkbox" value="25" class="checkbox-btn">25</option>
+                        <option type="checkbox" value="40" class="checkbox-btn">40</option>
+                    </select>
+                </div>
+            </div>
+            <details style="margin-top: 10px;">
+                <p>Cords will be used in text mode. To calculate distance to bosses.</p>
+                <div style="display: flex;flex-direction: column;align-items: center;">
+                    <div style="padding-right: 30px;display: flex;flex-direction: row;align-items: center;">
+                        <label for="search-radius" class="checkbox-btn center1" >x</label>
+                        <input name="search-radius" id="x" class="checkbox-btn-group center2">
+                            
+                        </input>
+                    </div>
+                    <div style="padding-right: 30px;display: flex;flex-direction: row;align-items: center;">
+                        <label for="share-amount" class="checkbox-btn center1">y</label>
+                        <input name="share-amount" id="y" class="checkbox-btn-group center2">
+                            
+                        </input>
+                    </div>
+                </div>
+                <summary class="checkbox-btn center1">Hive Location</summary>
+            </details>
+
+            <label class="checkbox-btn center1">Ymirs/Pans</label>
+            <div class="checkbox-btn-group center2">
+                <label class="checkbox-btn"><input type="checkbox" id="YmirPan1"><span>Lv1</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="YmirPan2"><span>Lv2</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="YmirPan3"><span>Lv3</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="YmirPan4"><span>Lv4</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="YmirPan5"><span>Lv5</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="YmirPan6"><span>Lv6</span></label>
+            </div>
+        <label class="checkbox-btn center1">Event boss: Turtle/Witch/Golem/Warlord</label>
+        <div class="checkbox-btn-group center2">
+            <label class="checkbox-btn"><input type="checkbox" id="Event1"><span>Lv1</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Event2"><span>Lv2</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Event3"><span>Lv3</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Event4"><span>Lv4</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Event5"><span>Lv5</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Event6"><span>Lv6</span></label>
+        </div>
+        <label class="checkbox-btn center1">Hydra</label>
+        <div class="checkbox-btn-group center2">
+            <label class="checkbox-btn"><input type="checkbox" id="Hydra1"><span>Lv1</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Hydra2"><span>Lv2</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Hydra3"><span>Lv3</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Hydra4"><span>Lv4</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Hydra5"><span>Lv5</span></label>
+        </div>
+        <label class="checkbox-btn center1">Bosses</label>
+        <div class="checkbox-btn-group center2">
+            <label class="checkbox-btn"><input type="checkbox" id="Ifrit"><span>Ifrit b11</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Kamaitachi"><span>Kamaitachi b12</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Fafnir"><span>Fafnir b13</span></label>
+            <label class="checkbox-btn"><input type="checkbox" id="Behemoth"><span>Behemoth b14</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Pheonix"><span>Phoenix b15</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Jormungandr"><span>Jormung b16</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Typhon"><span>Typhon b17</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Ammit"><span>Ammit b18</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="StymphalianBird"><span>Bird b19</span> </label>
+        </div>
+        <label class="checkbox-btn center1">Sphinx</label>
+        <div class="checkbox-btn-group center2">
+            <label class="checkbox-btn"><input type="checkbox" id="Sphinx1"><span>Lv1</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Sphinx2"><span>Lv2</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Sphinx3"><span>Lv3</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Sphinx4"><span>Lv4</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Sphinx5"><span>Lv5</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Sphinx6"><span>Lv6</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Sphinx7"><span>Lv7</span> </label>
+        </div>
+        <label class="checkbox-btn center1">Cerberus</label>
+        <div class="checkbox-btn-group center2">
+            <label class="checkbox-btn"><input type="checkbox" id="Cerberus1"><span>Lv1</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Cerberus2"><span>Lv2</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Cerberus3"><span>Lv3</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Cerberus4"><span>Lv4</span> </label>
+        </div>
+        <label class="checkbox-btn center1">Bayard</label>
+        <div class="checkbox-btn-group center2">
+            <label class="checkbox-btn"><input type="checkbox" id="Bayard1"><span>Lv1</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Bayard2"><span>Lv2</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Bayard3"><span>Lv3</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Bayard4"><span>Lv4</span> </label>
+        </div>
+<!--         <label class="checkbox-btn center1">Skullcrawler</label>
+        <div class="checkbox-btn-group center2">
+            <label class="checkbox-btn"><input type="checkbox" id="Skullcrawler1"><span>Lv1</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Skullcrawler2"><span>Lv2</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Skullcrawler3"><span>Lv3</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Skullcrawler4"><span>Lv4</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Skullcrawler5"><span>Lv5</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="Skullcrawler6"><span>Lv6</span> </label>
+        </div> -->
+        <label class="checkbox-btn center1">Stuff</label>
+        <div class="checkbox-btn-group center2">
+            <label class="checkbox-btn"><input type="checkbox" id="Aglaope"><span>Aglaope</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="GoldGoblin"><span>GoldGoblin</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="MysteriousWitch"><span>PieWitch</span> </label>
+            <label class="checkbox-btn"><input type="checkbox" id="CelebrationSquad4"><span>Lv4 Celebration Squad</span> </label>
+        </div>
+</section>
+
+
+    <script>
+        const params = new URLSearchParams(location.search)
+        data = params.get('data')
+        var obj = JSON.parse(data);
+        console.log("json=")
+        console.log(obj)
+        bosses = obj['b'].split(',')
+        radius = obj['r']
+        x = obj['x']
+        y = obj['y']
+        if (x == undefined){
+            x = 600;
+            y = 600;
+        }
+        share_amount = obj['s']
+        if (radius == undefined){
+            radius = "FullMap";
+        }
+        if (share_amount == undefined){
+            share_amount = 15;
+        }
+        console.log(radius)
+
+        // set values 
+        for (var i = 0; i < bosses.length; i++) {
+            console.log(i + " = #"+bosses[i]);
+            if (bosses[i].length > 0){
+                document.querySelector('#'+bosses[i]).checked = true
+            }
+            
+        }
+        document.querySelector('#search-radius').value = radius
+        document.querySelector('#share-amount').value = share_amount
+        document.querySelector('#x').value = x
+        document.querySelector('#y').value = y
+    </script>
+    <script src="panel_sep.js"></script>
+
+
+</body>
+
+</html>
