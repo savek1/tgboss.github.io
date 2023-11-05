@@ -1,0 +1,128 @@
+body {
+	display: unset;
+    font-family: var(--default-font);
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+    background-color: var(--tg-theme-bg-color);
+    color: var(--tg-theme-text-color);
+    color-scheme: var(--tg-color-scheme);
+    margin: 0;
+    padding: 0;
+    width: 1px;
+    min-width: 100%;
+  
+    --default-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --block-bg-color: var(--tg-theme-bg-color);
+    --bg-color: var(--tg-theme-secondary-bg-color, #ebedf0);
+    --animation: .15s ease;
+    --page-animation-duration: .3s;
+    --page-animation: var(--page-animation-duration) ease;
+    --status-height: 48px;
+    --accent-color: #31b545;
+    --page-hint-color: #83878a;
+    --hint-color: #74787a;
+    --placeholder-color: #999da1;
+    --ripple-duration: .45s;
+    --ripple-end-duration: .3s;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    
+  }
+  .center1 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+  .center2{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+  }
+  .cafe-items {
+    flex-wrap: wrap;
+	  padding: 20px;
+    margin: 0 auto;
+    max-width: 480px;
+    /* justify-content: space-around;
+    align-content: flex-end; */
+    transition: max-height var(--page-animation), opacity var(--page-animation);
+    background-color: var(--block-bg-color);
+}
+.checkbox-btn {
+	display: inline-block;
+	margin: 0 5px 0 0;
+	user-select: none;
+	position: relative;
+}
+.checkbox-btn input[type=checkbox] {
+	z-index: -1;
+	opacity: 0;
+	display: block;
+	width: 0;
+	height: 0;
+}
+.checkbox-btn span {
+	display: inline-block;
+	cursor: pointer;
+	padding: 0px 10px;
+	line-height: 30px;
+    font-weight: 500;
+	border-radius: 10px;
+	transition: background 0.2s ease;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+} 
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+label.center1 {
+  padding-top: 10px;
+}
+.checkbox-btn input[type=checkbox]:checked + span {
+	background: #00ff99;
+    color: var(--tg-theme-button-text-color);
+}
+.checkbox-btn input[type=checkbox]:not(:checked) + span {
+	background: #e64d44;
+    color: var(--tg-theme-button-text-color);
+
+} 
+
+details> summary:before, details[open]> summary:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: -21px;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='9' viewBox='0 0 14 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L7 7.5L13 1.5' stroke='%230039A6' stroke-width='2'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: .2s;
+}
+ 
+details[open]> summary:before {
+    transform: rotate(180deg);
+}
