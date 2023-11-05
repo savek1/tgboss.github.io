@@ -82,7 +82,8 @@ body {
 } 
 
 .tab button {
-  background-color: inherit;
+  background-color: var(--tg-theme-button-color);
+  color:var(--tg-theme-button-text-color);
   float: left;
   border: none;
   outline: none;
