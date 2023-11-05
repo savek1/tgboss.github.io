@@ -186,6 +186,7 @@
         console.log(obj)
         bosses = obj['b'].split(',')
         radius = obj['r']
+        power = obj['p']
         x = obj['x']
         y = obj['y']
         if (x == undefined){
@@ -198,6 +199,9 @@
         }
         if (share_amount == undefined){
             share_amount = 15;
+        }
+        if (power == undefined){
+            power = 149;
         }
         console.log(radius)
 
@@ -213,6 +217,8 @@
         document.querySelector('#share-amount').value = share_amount
         document.querySelector('#x').value = x
         document.querySelector('#y').value = y
+        console.log("POWER", power)
+        document.querySelector('#power').value = power
     </script>
     <script src="tabs1.js"></script>
 
