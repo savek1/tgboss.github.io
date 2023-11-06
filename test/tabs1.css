@@ -85,7 +85,7 @@ body {
 } 
 
 .tab button {
-  background-color: var(--tg-theme-button-color);
+  background-color: var(--tg-theme-bg-color);
   color:var(--tg-theme-button-text-color);
   float: left;
   border: none;
@@ -100,7 +100,7 @@ body {
 
 /* Create an active/current tablink class */
 .tab button.active {
-  background-color: #0059b5;
+  background-color: var(--tg-theme-button-color);
 }
 label.center1 {
   padding-top: 10px;
