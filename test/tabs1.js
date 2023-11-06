@@ -2,9 +2,9 @@ let tg = Telegram.WebApp;
 
 tg.ready();
 tg.expand();
-try {
-    tg.setHeaderColor("#2cab37");
-} catch(err) {}
+// try {
+//     tg.setHeaderColor("#2cab37");
+// } catch(err) {}
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2cab37";
 document.addEventListener("change", function(){
