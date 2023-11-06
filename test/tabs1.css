@@ -78,7 +78,7 @@ body {
 .tab {
   /* overflow: hidden; */
   border: 1px solid #ccc;
-  background-color: var(--tg-theme-button-color);
+  background-color: var(--tg-theme-bg-color);
   display: flex;
   justify-content: center;
   min-width: -webkit-fill-available;
@@ -86,7 +86,7 @@ body {
 
 .tab button {
   background-color: var(--tg-theme-bg-color);
-  color:var(--tg-theme-button-text-color);
+  color: var(--tg-theme-button-text-color);
   float: left;
   border: none;
   outline: none;
