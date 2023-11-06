@@ -26,7 +26,6 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
     let share_amount = document.querySelector("#share-amount").value
     let x = document.querySelector("#x").value
     let y = document.querySelector("#y").value
-    let p = document.querySelector("#power").value
     if (data.startsWith(',')){
             data = data.substring(1)
         }
@@ -35,8 +34,7 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
         "r": radius,
         "s": share_amount,
         "x": x,
-        "y": y,
-        "p": p
+        "y": y
     }
     tg.sendData(JSON.stringify(ret));
 })

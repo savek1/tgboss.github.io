@@ -76,9 +76,12 @@ body {
 }
 
 .tab {
-  overflow: hidden;
+  /* overflow: hidden; */
   border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  background-color: var(--tg-theme-button-color);
+  display: flex;
+  justify-content: center;
+  min-width: -webkit-fill-available;
 } 
 
 .tab button {
@@ -92,12 +95,12 @@ body {
   transition: 0.3s;
 }
 .tab button:hover {
-  background-color: #ddd;
+  background-color: rgb(8, 0, 241);
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-  background-color: #ccc;
+  background-color: #0059b5;
 }
 label.center1 {
   padding-top: 10px;

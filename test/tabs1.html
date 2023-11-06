@@ -10,7 +10,7 @@
 <body>
     <section class="cafe-items center1">
         <div class="tab">
-            <button class="tab-link" onclick="openTab(event, 'tab-Bosses')">Bosses</button>
+            <button class="tab-link" id="btn_Bosses" onclick="openTab(event, 'tab-Bosses')">Bosses</button>
             <button class="tab-link" onclick="openTab(event, 'tab-Settings')">Settings</button>
         </div>
         <div class="cafe-items center1 tab-content" id="tab-Settings">
@@ -175,7 +175,8 @@
             document.getElementById(tabName).style.display = "flex";
             evt.currentTarget.className += " active";
     }
-    openTab('click', "tab-Bosses");
+    // openTab('click', "tab-Bosses");
+    document.getElementById("btn_Bosses").click()
     </script>
 
     <script>
