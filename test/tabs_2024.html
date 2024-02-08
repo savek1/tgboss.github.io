@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover">
+    <link href="tabs1.css" rel="stylesheet">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <section class="cafe-items center1">
+        <div class="tab">
+            <button class="tab-link" id="btn_Bosses" onclick="openTab(event, 'tab-Bosses')">Bosses</button>
+            <button class="tab-link" onclick="openTab(event, 'tab-Settings')">Settings</button>
+        </div>
+        <div class="cafe-items center1 tab-content" id="tab-Settings">
+            <details style="margin-top: 20px;">
+                <p>Cords will be used ONLY in the text mode. To calculate distance to bosses.</p>
+                <div style="display: flex;flex-direction: column;align-items: center;">
+                    <div style="padding-right: 30px;display: flex;flex-direction: row;align-items: center;">
+                        <label for="search-radius" class="checkbox-btn center1" >x</label>
+                        <input name="search-radius" id="x" class="checkbox-btn-group center2"></input>
+                        
+                    </div>
+                    <div style="padding-right: 30px;display: flex;flex-direction: row;align-items: center;">
+                        <label for="share-amount" class="checkbox-btn center1">y</label>
+                        <input name="share-amount" id="y" class="checkbox-btn-group center2"></input>
+                    </div>
+                </div>
+                <summary class="checkbox-btn center1">Hive Location</summary>
+            </details>
+            <details style="margin-top: 20px;">
+                <p>Minimal power for bubble scan.</p>
+                <div style="display: flex;flex-direction: column;align-items: center;">
+                    <div style="padding-right: 30px;display: flex;flex-direction: row;align-items: center;">
+                        <label for="player-power" class="checkbox-btn center1" >power:</label>
+                        <input name="player-power" id="power" class="checkbox-btn-group center2" placeholder="in millions. ex: 150"></input>
+                        
+                    </div>
+                </div>
+                <summary class="checkbox-btn center1">Bubble Scan</summary>
+            </details>
+        </div>
+        <div class="cafe-items center1 tab-content" id="tab-Bosses">
+            <div style="display: flex;">
+                <div style="padding-right: 30px;">
+                    <label for="search-radius" class="checkbox-btn center1">Search radius:</label>
+                    <select name="search-radius" id="search-radius" class="checkbox-btn-group center2">
+                        <option type="checkbox" value="FullMap">Full Map</option>
+                        <option type="checkbox" value="150km" class="checkbox-btn">150km</option>
+                        <option type="checkbox" value="250km" class="checkbox-btn">250km</option>
+                        <option type="checkbox" value="400km" class="checkbox-btn">400km</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="share-amount" class="checkbox-btn center1">Bosses to share:</label>
+                    <select name="share-amount" id="share-amount" class="checkbox-btn-group center2">
+                        <option type="checkbox" value="6">6</option>
+                        <option type="checkbox" value="10" class="checkbox-btn">10</option>
+                        <option type="checkbox" value="15" class="checkbox-btn">15</option>
+                        <option type="checkbox" value="25" class="checkbox-btn">25</option>
+                        <option type="checkbox" value="40" class="checkbox-btn">40</option>
+                    </select>
+                </div>
+            </div>
+            <label class="checkbox-btn center1">Ymirs/Pans</label>
+            <div class="checkbox-btn-group center2">
+                <label class="checkbox-btn"><input type="checkbox" id="YmirPan1"><span>Lv1</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="YmirPan2"><span>Lv2</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="YmirPan3"><span>Lv3</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="YmirPan4"><span>Lv4</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="YmirPan5"><span>Lv5</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="YmirPan6"><span>Lv6</span></label>
+            </div>
+            <label class="checkbox-btn center1">Event boss: Turtle/Witch/Golem/Warlord</label>
+            <div class="checkbox-btn-group center2">
+                <label class="checkbox-btn"><input type="checkbox" id="Event1"><span>Lv1</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="Event2"><span>Lv2</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="Event3"><span>Lv3</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="Event4"><span>Lv4</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="Event5"><span>Lv5</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="Event6"><span>Lv6</span></label>
+            </div>
+            <label class="checkbox-btn center1">Hydra</label>
+            <div class="checkbox-btn-group center2">
+                <label class="checkbox-btn"><input type="checkbox" id="Hydra1"><span>Lv1</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="Hydra2"><span>Lv2</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="Hydra3"><span>Lv3</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="Hydra4"><span>Lv4</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="Hydra5"><span>Lv5</span></label>
+            </div>
+            <label class="checkbox-btn center1">Bosses</label>
+            <div class="checkbox-btn-group center2">
+                <label class="checkbox-btn"><input type="checkbox" id="Ifrit"><span>Ifrit b11</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="Kamaitachi"><span>Kamaitachi b12</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="Fafnir"><span>Fafnir b13</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="Behemoth"><span>Behemoth b14</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Pheonix"><span>Phoenix b15</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Jormungandr"><span>Jormung b16</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Typhon"><span>Typhon b17</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Ammit"><span>Ammit b18</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="StymphalianBird"><span>Bird b19</span> </label>
+            </div>
+            <label class="checkbox-btn center1">Sphinx</label>
+            <div class="checkbox-btn-group center2">
+                <label class="checkbox-btn"><input type="checkbox" id="Sphinx1"><span>Lv1</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Sphinx2"><span>Lv2</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Sphinx3"><span>Lv3</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Sphinx4"><span>Lv4</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Sphinx5"><span>Lv5</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Sphinx6"><span>Lv6</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Sphinx7"><span>Lv7</span> </label>
+            </div>
+            <label class="checkbox-btn center1">Cerberus</label>
+            <div class="checkbox-btn-group center2">
+                <label class="checkbox-btn"><input type="checkbox" id="Cerberus1"><span>Lv1</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Cerberus2"><span>Lv2</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Cerberus3"><span>Lv3</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Cerberus4"><span>Lv4</span> </label>
+            </div>
+            <label class="checkbox-btn center1">Bayard</label>
+            <div class="checkbox-btn-group center2">
+                <label class="checkbox-btn"><input type="checkbox" id="Bayard1"><span>Lv1</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Bayard2"><span>Lv2</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Bayard3"><span>Lv3</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Bayard4"><span>Lv4</span> </label>
+            </div>
+        <!--         <label class="checkbox-btn center1">Skullcrawler</label>
+            <div class="checkbox-btn-group center2">
+                <label class="checkbox-btn"><input type="checkbox" id="Skullcrawler1"><span>Lv1</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Skullcrawler2"><span>Lv2</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Skullcrawler3"><span>Lv3</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Skullcrawler4"><span>Lv4</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Skullcrawler5"><span>Lv5</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Skullcrawler6"><span>Lv6</span> </label>
+            </div> -->
+            <label class="checkbox-btn center1">Pumpkins</label>
+            <div class="checkbox-btn-group center2">
+                <label class="checkbox-btn"><input type="checkbox" id="Pumpkin1"><span>Lv1</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Pumpkin2"><span>Lv2</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Pumpkin3"><span>Lv3</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Pumpkin4"><span>Lv4</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Pumpkin5"><span>Lv5</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Pumpkin6"><span>Lv6</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Pumpkin7"><span>Lv7</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Pumpkin8"><span>Lv8</span> </label>
+            </div>
+            <label class="checkbox-btn center1">Stuff</label>
+            <div class="checkbox-btn-group center2">
+                <label class="checkbox-btn"><input type="checkbox" id="Aglaope"><span>Aglaope</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="GoldGoblin"><span>GoldGoblin</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="MysteriousWitch"><span>PieWitch</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="CelebrationSquad4"><span>Lv4 Celebration Squad</span> </label>
+            </div>
+          <label class="checkbox-btn center1">Shadow of Dawn</label>
+            <div class="checkbox-btn-group center2">
+                <label class="checkbox-btn"><input type="checkbox" id="ShadowB10"><span>B10</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="ShadowB11"><span>B11</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="ShadowB12"><span>B12</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="ShadowB13"><span>B13</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="ShadowB14"><span>B14</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="ShadowB15"><span>B15</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="ShadowB16"><span>B16</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="ShadowB17"><span>B17</span> </label>
+            </div>
+           <label class="checkbox-btn center1">Nians</label>
+            <div class="checkbox-btn-group center2">
+                <label class="checkbox-btn"><input type="checkbox" id="Nian1"><span>Lv1</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="Nian2"><span>Lv2</span></label>
+                <label class="checkbox-btn"><input type="checkbox" id="Nian3"><span>Lv3</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Nian4"><span>Lv4</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Nian5"><span>Lv5</span> </label>
+                <label class="checkbox-btn"><input type="checkbox" id="Nian6"><span>Lv6</span> </label>
+            </div>
+        </div>
+    </section>
+    <script>
+        function openTab(evt, tabName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(tabName).style.display = "flex";
+            evt.currentTarget.className += " active";
+    }
+    // openTab('click', "tab-Bosses");
+    document.getElementById("btn_Bosses").click()
+    </script>
+
+    <script>
+        const params = new URLSearchParams(location.search)
+        data = params.get('data')
+        var obj = JSON.parse(data);
+        console.log("json=")
+        console.log(obj)
+        bosses = obj['b'].split(',')
+        radius = obj['r']
+        power = obj['p']
+        x = obj['x']
+        y = obj['y']
+        if (x == undefined){
+            x = 600;
+            y = 600;
+        }
+        share_amount = obj['s']
+        if (radius == undefined){
+            radius = "FullMap";
+        }
+        if (share_amount == undefined){
+            share_amount = 15;
+        }
+        if (power == undefined){
+            power = 149;
+        }
+        console.log(radius)
+
+        // set values 
+        for (var i = 0; i < bosses.length; i++) {
+            console.log(i + " = #"+bosses[i]);
+            if (bosses[i].length > 0){
+                document.querySelector('#'+bosses[i]).checked = true
+            }
+            
+        }
+        document.querySelector('#search-radius').value = radius
+        document.querySelector('#share-amount').value = share_amount
+        document.querySelector('#x').value = x
+        document.querySelector('#y').value = y
+        console.log("POWER", power)
+        document.querySelector('#power').value = power
+    </script>
+    <script src="tabs1.js"></script>
+
+
+</body>
+
+</html>
