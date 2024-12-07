@@ -172,11 +172,7 @@
                 <label class="checkbox-btn"><input type="checkbox" id="Nian5"><span>Lv5</span> </label>
                 <label class="checkbox-btn"><input type="checkbox" id="Nian6"><span>Lv6</span> </label>
             </div>
-            <label class="checkbox-btn center1">Tigers</label>
-            <div class="checkbox-btn-group center2">
-                <label class="checkbox-btn"><input type="checkbox" id="Tiger1"><span>Lv1</span></label>
-                <label class="checkbox-btn"><input type="checkbox" id="Tiger2"><span>Lv2</span></label>
-            </div>
+            
         </div>
     </section>
     <script>
@@ -245,6 +241,11 @@
         document.querySelector('#y').value = y
         console.log("POWER", power)
         document.querySelector('#power').value = power
+        document.getElementById('tab-Bosses').onclick=function(e){
+         if(e.target.nodeName=='INPUT'){
+          try{window.Telegram.WebApp.HapticFeedback.impactOccurred("soft");}catch{}
+         }
+        }
     </script>
     <script src="tabs1.js"></script>
 
