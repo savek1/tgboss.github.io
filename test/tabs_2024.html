@@ -63,10 +63,10 @@
                     </select>
                 </div>
                 <div style="padding-left: 30px;">
-                    <label for="sorting" class="checkbox-btn center1">Sort:</label>
-                    <select name="sorting" id="sorting" class="checkbox-btn-group center2">
-                        <option type="checkbox" value="dist">distance</option>
-                        <option type="checkbox" value="power" class="checkbox-btn">power</option>
+                    <label for="boss-sorting" class="checkbox-btn center1">Sort by:</label>
+                    <select name="boss-sorting" id="boss-sorting" class="checkbox-btn-group center2">
+                        <option type="checkbox" value="dist" class="checkbox-btn">Distance</option>
+                        <option type="checkbox" value="power" class="checkbox-btn">Power</option>
                     </select>
                 </div>
             </div>
@@ -253,7 +253,7 @@
         }
         document.querySelector('#search-radius').value = radius
         document.querySelector('#share-amount').value = share_amount
-        document.querySelector('#sorting').value = sort
+        document.querySelector('#boss-sorting').value = sort
         document.querySelector('#x').value = x
         document.querySelector('#y').value = y
         console.log("POWER", power)
