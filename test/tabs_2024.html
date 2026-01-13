@@ -247,7 +247,10 @@
         for (var i = 0; i < bosses.length; i++) {
             console.log(i + " = #"+bosses[i]);
             if (bosses[i].length > 0){
-                document.querySelector('#'+bosses[i]).checked = true
+                try {
+                    document.querySelector('#'+bosses[i]).checked = true
+                } catch{}
+                
             }
             
         }
