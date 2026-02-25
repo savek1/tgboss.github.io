@@ -224,61 +224,45 @@
     document.getElementById("btn_Bosses").click()
     </script>
 
-    <script>
-        const params = new URLSearchParams(location.search)
-        data = params.get('data')
-        var obj = JSON.parse(data);
-        console.log("json=")
-        console.log(obj)
-        bosses = obj['b'].split(',')
-        radius = obj['r']
-        power = obj['p']
-        sort = obj['sort']
-        x = obj['x']
-        y = obj['y']
-        if (x == undefined){
-            x = 600;
-            y = 600;
-        }
-        share_amount = obj['s']
-        if (radius == undefined){
-            radius = "FullMap";
-        }
-        if (share_amount == undefined){
-            share_amount = 15;
-        }
-        if (power == undefined){
-            power = 149;
-        }
-        if (sort == undefined){
-            sort = "dist";
-        }
-        console.log("sort=", sort)
-
-        // set values 
-        for (var i = 0; i < bosses.length; i++) {
-            console.log(i + " = #"+bosses[i]);
-            if (bosses[i].length > 0){
-                try {
-                    document.querySelector('#'+bosses[i]).checked = true
-                } catch{}
-                
-            }
+   <script>
+            const params = new URLSearchParams(location.search);
+            const obj = JSON.parse(params.get('data') || '{}');
+            console.log("json=", obj);
+        
+            const {
+                b: bossesStr = '',
+                r: radius = 'FullMap',
+                s: share_amount = 15,
+                p: power = 149,
+                sort = 'dist',
+                x = 600,
+                y = 600
+            } = obj;
+        
+            console.log("sort=", sort, "POWER=", power);
+        
+            const bosses = bossesStr.split(',').filter(Boolean);
             
-        }
-        document.querySelector('#search-radius').value = radius
-        document.querySelector('#share-amount').value = share_amount
-        document.querySelector('#boss-sorting').value = sort
-        document.querySelector('#x').value = x
-        document.querySelector('#y').value = y
-        console.log("POWER", power)
-        document.querySelector('#power').value = power
-        document.getElementById('tab-Bosses').onclick=function(e){
-         if(e.target.nodeName=='INPUT'){
-          try{window.Telegram.WebApp.HapticFeedback.impactOccurred("soft");}catch{}
-         }
-        }
-    </script>
+            bosses.forEach(boss => {
+                const checkbox = document.getElementById(boss);
+                if (checkbox) {
+                    checkbox.checked = true;
+                }
+            });
+        
+            document.getElementById('search-radius').value = radius;
+            document.getElementById('share-amount').value = share_amount;
+            document.getElementById('boss-sorting').value = sort;
+            document.getElementById('x').value = x;
+            document.getElementById('y').value = y;
+            document.getElementById('power').value = power;
+        
+            document.getElementById('tab-Bosses').addEventListener('click', (e) => {
+                if (e.target.nodeName === 'INPUT') {
+                    window.Telegram?.WebApp?.HapticFeedback?.impactOccurred?.("soft");
+                }
+            });
+</script>
     <script src="tabs1.js"></script>
 
 
